@@ -29,14 +29,11 @@ def LimbLength_ON(D, n_leaves, j):
     i = random.choice(indices)
     indices.remove(i)
     
-    k_star = None
-    
     for k in indices:
         pos_limb = (D[i][j] + D[j][k] - D[i][k]) / 2
         if pos_limb < limb:
             limb = pos_limb
-            k_star = k
-    return limb, i, k_star
+    return limb
 
 
 if __name__ == '__main__':
