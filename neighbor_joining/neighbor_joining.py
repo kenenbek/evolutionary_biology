@@ -1,6 +1,7 @@
 import math
 import copy
 
+
 class Node:
     def __init__(self, id):
         self.id = id
@@ -8,7 +9,7 @@ class Node:
 
 class PhyloTree:
     def __init__(self, n):
-        self.node_index = n-1
+        self.node_index = n - 1
         self.tree = None
         self.adjacency_matrix = []
         self.index_to_id = []
