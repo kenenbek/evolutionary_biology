@@ -109,8 +109,8 @@ def additive_phylogeny(D, phylo_tree):
         phylo_tree.add_edge(0, 1, D[0][1])
         return
     
-    limb_length = LimbLength_ON(D, n, n - 1)
-    i, k = find_i_and_k(D, n - 1, limb_length)
+    limb_length, i, k = LimbLength_ON(D, n, n - 1)
+    # i, k = find_i_and_k(D, n - 1, limb_length)
     
     # Remove limb length from D
     for j in range(n - 1):

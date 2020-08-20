@@ -28,16 +28,17 @@ def LimbLength_ON(D, n_leaves, j):
     indices.remove(j)
     i = random.choice(indices)
     indices.remove(i)
-    
+    k_ = None
     for k in indices:
         pos_limb = (D[i][j] + D[j][k] - D[i][k]) / 2
         if pos_limb < limb:
             limb = pos_limb
-    return limb
+            k_ = k
+    return limb, i, k_
 
 
 if __name__ == '__main__':
-    with open("dataset_10329_11.txt") as file:
+    with open("data.txt") as file:
         n_leaves = int(file.readline().rstrip('\n'))
         j = int(file.readline().rstrip('\n'))
         print(n_leaves, j)
@@ -46,7 +47,7 @@ if __name__ == '__main__':
         
         for line in file:
             line = line.rstrip('\n')
-            line = line.split(" ")
+            line = line.split("\t")
             
             row = [int(num) for num in line]
             D.append(row)
